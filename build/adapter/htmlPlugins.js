@@ -9,7 +9,7 @@ function getHtmlPlugins(publicPath) {
       favicon: "public/favicon.ico",
       filename: `${item}.html`,
       chunks: [item],
-      template: resolve(`../public/${item}.html`),
+      template: resolve(`public/${item}.html`),
       path: publicPath
     });
   });

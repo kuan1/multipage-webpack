@@ -4,7 +4,7 @@ const { resolve, pages } = require("./utils");
 function getEntry() {
   const entry = {};
   pages.forEach(item => {
-    entry[item] = resolve(item);
+    entry[item] = resolve(`src/${item}`);
   });
   return entry;
 }
