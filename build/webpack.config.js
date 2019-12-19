@@ -97,8 +97,10 @@ module.exports = {
     ...htmlPlugins(publicPath)
   ],
   devServer: {
-    after() {
-      logger.run(port);
+    after(app, server, compiler) {
+      compiler.hooks.done.tap("webpack dev", () => {
+        logger.run(port);
+      });
     },
     port,
     proxy: {
